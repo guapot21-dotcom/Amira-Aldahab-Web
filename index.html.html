@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fundación Amira Aldahab: solidaridad, apoyo comunitario y oportunidades para un mundo mejor.">
+  <title>Fundación Amira Aldahab | Juntos por un mundo mejor</title>
+  <style>
+    :root{--navy:#102c40;--navy2:#0b2030;--gold:#d69a18;--gold2:#f0bd43;--cream:#faf8f2;--ink:#18364b;--muted:#536778;--white:#fff}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);line-height:1.6;background:#fff}
+    a{color:inherit}
+    .container{width:min(1120px,92%);margin:auto}
+    .topbar{background:var(--white);box-shadow:0 2px 14px #102c4012;position:sticky;top:0;z-index:10}
+    .nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+    .brand{display:flex;align-items:center;gap:11px;text-decoration:none;min-width:235px}
+    .brand-mark{width:48px;height:48px;border:3px solid var(--gold);border-radius:50% 50% 46% 46%;display:grid;place-items:center;color:var(--gold);font-size:27px;font-weight:bold}
+    .brand-name{font-family:Georgia,serif;font-size:20px;font-weight:bold;line-height:1.05;color:var(--navy)}
+    .brand-tag{font-size:10px;font-style:italic;color:var(--muted);display:block;text-align:center;margin-top:4px}
+    .nav-links{display:flex;align-items:center;gap:23px}
+    .nav-links a{text-decoration:none;font-size:14px;font-weight:600}
+    .nav-links a:hover{color:var(--gold)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:30px;border:0;background:var(--gold);color:#fff;font-weight:bold;text-decoration:none;cursor:pointer;transition:.2s}
+    .btn:hover{background:#b9800c;transform:translateY(-1px)}
+    .btn-outline{background:transparent;color:var(--gold);border:1px solid var(--gold)}
+    .btn-outline:hover{color:#fff}
+    .menu-toggle{display:none;background:none;border:0;font-size:28px;color:var(--navy);cursor:pointer}
+    .hero{min-height:440px;display:flex;align-items:center;color:#fff;background:linear-gradient(90deg,rgba(5,20,19,.88),rgba(5,20,19,.52) 48%,rgba(5,20,19,.05)),url('https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=2000&q=85') center 45%/cover}
+    .hero-content{padding:70px 0;max-width:570px}
+    .eyebrow{text-transform:uppercase;letter-spacing:2px;color:var(--gold2);font-size:12px;font-weight:bold}
+    h1,h2,h3{font-family:Georgia,'Times New Roman',serif;line-height:1.15;margin-top:0}
+    h1{font-size:clamp(42px,6vw,66px);margin:12px 0 18px}
+    .hero p{font-size:18px;max-width:500px;margin:0 0 25px}
+    section{scroll-margin-top:90px}
+    .section{padding:68px 0}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:48px}
+    .about-photo{width:100%;height:330px;object-fit:cover;border-radius:8px}
+    h2{font-size:clamp(30px,4vw,42px);color:var(--navy);margin:8px 0 15px}
+    .lead{font-size:17px;color:var(--muted)}
+    .programs{background:var(--cream);text-align:center}
+    .section-intro{max-width:680px;margin:0 auto 34px}
+    .program-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:22px}
+    .program{padding:22px 14px;border-radius:12px;background:#fff;border:1px solid #eee9dd}
+    .program-icon{width:62px;height:62px;margin:0 auto 14px;border-radius:50%;display:grid;place-items:center;background:#fff3d7;color:#b47a08;font-size:30px}
+    .program h3{font-size:19px;margin:0 0 8px}
+    .program p{font-size:14px;color:var(--muted);margin:0}
+    .help{background:var(--navy2);color:#fff}
+    .help-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:48px}
+    .help h2{color:#fff}
+    .help p{color:#e2e9ed}
+    .help-options{border-left:1px solid #9b782e;padding-left:30px;display:grid;gap:18px}
+    .help-options a{color:#fff;text-decoration:none}
+    .help-options a span{color:var(--gold2);font-size:22px;margin-right:12px}
+    .impact{text-align:center}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:30px}
+    .stat{padding:12px;border-right:1px solid #e4e7e9}
+    .stat:last-child{border:0}
+    .stat-icon{font-size:27px;color:var(--gold)}
+    .stat strong{display:block;font-family:Georgia,serif;font-size:29px;color:var(--navy)}
+    .stat span{font-size:13px;color:var(--muted)}
+    .contact{background:#f6f7f7}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px}
+    .contact-card{background:#fff;padding:26px;border-radius:10px;box-shadow:0 5px 25px #102c400c}
+    .contact-line{margin:14px 0;color:var(--muted)}
+    form{display:grid;gap:13px}
+    input,textarea,select{width:100%;padding:13px 14px;border:1px solid #d7dfe4;border-radius:6px;font:inherit;background:#fff}
+    textarea{min-height:115px;resize:vertical}
+    .notice{font-size:12px;color:var(--muted)}
+    footer{background:var(--navy2);color:#fff;padding:36px 0 18px}
+    .footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:28px;align-items:start}
+    footer .brand-name{color:#fff}
+    footer p,footer a{font-size:13px;color:#dce4e9}
+    .footer-links{display:grid;gap:8px}
+    .footer-links a{text-decoration:none}
+    .copyright{border-top:1px solid #ffffff2b;margin-top:28px;padding-top:15px;text-align:center;font-size:12px;color:#c6d0d7}
+    .toast{display:none;margin-top:12px;padding:10px;border-radius:6px;background:#e8f5e9;color:#205b2a;font-size:14px}
+    @media(max-width:900px){.nav-links{gap:13px}.nav-links a{font-size:13px}.program-grid{grid-template-columns:repeat(3,1fr)}}
+    @media(max-width:700px){
+      .nav{min-height:70px}.brand{min-width:0}.brand-name{font-size:17px}.brand-mark{width:42px;height:42px}
+      .menu-toggle{display:block}.nav-links{display:none;position:absolute;top:70px;left:0;right:0;background:#fff;padding:18px 5%;box-shadow:0 8px 15px #0001;flex-direction:column;align-items:flex-start}
+      .nav-links.open{display:flex}.nav-links a{font-size:15px}.nav>.btn{display:none}
+      .hero{min-height:460px;background-position:58% center}.hero-content{padding:60px 0}.hero p{font-size:16px}
+      .section{padding:50px 0}.about-grid,.help-grid,.contact-grid{grid-template-columns:1fr;gap:28px}.about-photo{height:260px}
+      .program-grid{grid-template-columns:repeat(2,1fr);gap:12px}.program{padding:18px 10px}
+      .stats{grid-template-columns:repeat(2,1fr);row-gap:20px}.stat:nth-child(2){border-right:0}
+      .help-options{border-left:0;border-top:1px solid #9b782e;padding:20px 0 0}.footer-grid{grid-template-columns:1fr;gap:18px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="Fundación Amira Aldahab, inicio">
+        <span class="brand-mark" aria-hidden="true">♡</span>
+        <span><span class="brand-name">Fundación<br>Amira Aldahab</span><span class="brand-tag">Juntos por un mundo mejor</span></span>
+      </a>
+      <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" onclick="toggleMenu()">☰</button>
+      <nav class="nav-links" id="navLinks" aria-label="Navegación principal">
+        <a href="#inicio" onclick="closeMenu()">Inicio</a><a href="#nosotros" onclick="closeMenu()">Nosotros</a><a href="#programas" onclick="closeMenu()">Programas</a><a href="#ayudar" onclick="closeMenu()">Cómo ayudar</a><a href="#contacto" onclick="closeMenu()">Contacto</a>
+      </nav>
+      <a class="btn" href="#ayudar">♡ Donar</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-content">
+        <div class="eyebrow">Fundación Amira Aldahab</div>
+        <h1>Solidaridad que transforma vidas</h1>
+        <p>Trabajamos para promover la esperanza, el apoyo y mejores oportunidades para las personas y comunidades que más lo necesitan.</p>
+        <a class="btn" href="#nosotros">♡ Conoce nuestra misión</a>
+      </div>
+    </section>
+
+    <section class="section" id="nosotros">
+      <div class="container about-grid">
+        <img class="about-photo" src="https://images.unsplash.com/photo-1494386346843-e12284507169?auto=format&fit=crop&w=1100&q=85" alt="Manos sosteniendo una pequeña planta, símbolo de esperanza y crecimiento" loading="lazy">
+        <div>
+          <div class="eyebrow">Sobre nosotros</div>
+          <h2>Nuestra misión</h2>
+          <p class="lead">La Fundación Amira Aldahab aspira a contribuir al bienestar de las comunidades mediante iniciativas solidarias, educación, salud y oportunidades de desarrollo.</p>
+          <p>Creemos que cada persona merece respeto, dignidad y la oportunidad de construir un futuro mejor. Queremos unir a personas voluntarias, colaboradores y comunidades alrededor de acciones que generen un impacto positivo.</p>
+          <a class="btn btn-outline" href="#programas">Conoce nuestros programas →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section programs" id="programas">
+      <div class="container">
+        <div class="eyebrow">Nuestros programas</div>
+        <h2>Áreas de acción</h2>
+        <p class="lead section-intro">Impulsamos iniciativas centradas en las necesidades de las personas y el desarrollo de comunidades más fuertes.</p>
+        <div class="program-grid">
+          <article class="program"><div class="program-icon" aria-hidden="true">▤</div><h3>Educación</h3><p>Promovemos el acceso al aprendizaje y a nuevas oportunidades.</p></article>
+          <article class="program"><div class="program-icon" aria-hidden="true">♡</div><h3>Salud</h3><p>Apoyamos iniciativas que favorecen el bienestar de las familias.</p></article>
+          <article class="program"><div class="program-icon" aria-hidden="true">♧</div><h3>Alimentación</h3><p>Fomentamos acciones solidarias para apoyar la seguridad alimentaria.</p></article>
+          <article class="program"><div class="program-icon" aria-hidden="true">⌂</div><h3>Vivienda</h3><p>Buscamos contribuir a entornos más seguros y dignos.</p></article>
+          <article class="program"><div class="program-icon" aria-hidden="true">♧</div><h3>Comunidad</h3><p>Colaboramos para fortalecer la participación y el desarrollo local.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section help" id="ayudar">
+      <div class="container help-grid">
+        <div>
+          <div class="eyebrow">Tú también puedes ayudar</div>
+          <h2>Juntos podemos llegar más lejos</h2>
+          <p>Tu tiempo, tus ideas o una contribución pueden ayudar a impulsar iniciativas solidarias. Escríbenos para conocer las formas de colaborar.</p>
+          <a class="btn" href="#contacto">Quiero colaborar</a>
+        </div>
+        <div class="help-options">
+          <a href="#contacto"><span>♡</span> Hacer una donación</a>
+          <a href="#contacto"><span>♧</span> Ser voluntario/a</a>
+          <a href="#contacto"><span>↗</span> Compartir nuestra misión</a>
+          <a href="#contacto"><span>✧</span> Proponer una alianza</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section impact" aria-labelledby="impact-title">
+      <div class="container">
+        <div class="eyebrow">Nuestro compromiso</div>
+        <h2 id="impact-title">Cada acción puede marcar la diferencia</h2>
+        <p class="lead">Queremos construir un futuro con más oportunidades, dignidad y solidaridad.</p>
+        <div class="stats">
+          <div class="stat"><div class="stat-icon" aria-hidden="true">♧</div><strong>Solidaridad</strong><span>Acciones con propósito</span></div>
+          <div class="stat"><div class="stat-icon" aria-hidden="true">▤</div><strong>Educación</strong><span>Oportunidades para crecer</span></div>
+          <div class="stat"><div class="stat-icon" aria-hidden="true">♡</div><strong>Bienestar</strong><span>Apoyo a las comunidades</span></div>
+          <div class="stat"><div class="stat-icon" aria-hidden="true">⌂</div><strong>Esperanza</strong><span>Un mejor mañana</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contacto">
+      <div class="container">
+        <div class="eyebrow">Ponte en contacto</div>
+        <h2>Hablemos de cómo ayudar</h2>
+        <p class="lead">Completa el formulario para expresar tu interés en colaborar o solicitar información.</p>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Información de contacto</h3>
+            <p class="contact-line">📍 República Dominicana <em>(confirma la dirección oficial)</em></p>
+            <p class="contact-line">✉️ <strong>Correo:</strong> agrega aquí el correo oficial</p>
+            <p class="contact-line">☎️ <strong>Teléfono:</strong> agrega aquí el teléfono oficial</p>
+            <p class="notice">Antes de publicar, reemplaza estos campos por los datos oficiales de la fundación.</p>
+          </div>
+          <div class="contact-card">
+            <form id="contactForm">
+              <label for="nombre">Nombre completo</label><input id="nombre" name="nombre" autocomplete="name" required placeholder="Tu nombre">
+              <label for="correo">Correo electrónico</label><input id="correo" name="correo" type="email" autocomplete="email" required placeholder="tunombre@ejemplo.com">
+              <label for="motivo">¿Cómo quieres colaborar?</label>
+              <select id="motivo" name="motivo"><option>Solicitar información</option><option>Hacer una donación</option><option>Ser voluntario/a</option><option>Proponer una alianza</option></select>
+              <label for="mensaje">Mensaje</label><textarea id="mensaje" name="mensaje" required placeholder="Escribe tu mensaje aquí"></textarea>
+              <button class="btn" type="submit">Preparar mensaje</button>
+              <div class="toast" id="formToast" role="status">Tu mensaje está preparado. Esta demostración no lo envía automáticamente; configura un correo o servicio de formularios para recibir mensajes.</div>
+              <p class="notice">Este formulario es una demostración visual y no transmite ni guarda tus datos.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">♡</span>
+          <span><span class="brand-name">Fundación<br>Amira Aldahab</span><span class="brand-tag">Juntos por un mundo mejor</span></span>
+        </div>
+        <div><h3>Explora</h3><div class="footer-links"><a href="#nosotros">Sobre nosotros</a><a href="#programas">Programas</a><a href="#ayudar">Cómo ayudar</a><a href="#contacto">Contacto</a></div></div>
+        <div><h3>Conecta con nosotros</h3><p>Agrega aquí los enlaces oficiales a tus redes sociales.</p><a href="#contacto">Escríbenos →</a></div>
+      </div>
+      <div class="copyright">© <span id="year"></span> Fundación Amira Aldahab. Todos los derechos reservados.</div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu(){
+      const nav=document.getElementById('navLinks');
+      const button=document.querySelector('.menu-toggle');
+      const isOpen=nav.classList.toggle('open');
+      button.setAttribute('aria-expanded',String(isOpen));
+      button.setAttribute('aria-label',isOpen?'Cerrar menú':'Abrir menú');
+      button.textContent=isOpen?'×':'☰';
+    }
+    function closeMenu(){
+      const nav=document.getElementById('navLinks');
+      const button=document.querySelector('.menu-toggle');
+      nav.classList.remove('open');
+      button.setAttribute('aria-expanded','false');
+      button.setAttribute('aria-label','Abrir menú');
+      button.textContent='☰';
+    }
+    document.getElementById('year').textContent=new Date().getFullYear();
+    document.getElementById('contactForm').addEventListener('submit',function(event){
+      event.preventDefault();
+      document.getElementById('formToast').style.display='block';
+    });
+  </script>
+</body>
+</html>
